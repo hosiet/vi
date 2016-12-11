@@ -1,0 +1,73 @@
+From: Boyuan Yang <073plan@gmail.com>
+Date: Mon, 12 Dec 2016 01:32:08 +0800
+Subject: patch makefile and append .traditional suffix
+
+---
+ Makefile | 46 +++++++++++++++++++++++-----------------------
+ 1 file changed, 23 insertions(+), 23 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 1a4f695..1959da8 100644
+--- a/Makefile
++++ b/Makefile
+@@ -299,37 +299,37 @@ install-man:
+ 	test -d $(DESTDIR)$(PREFIX) || mkdir -p $(DESTDIR)$(PREFIX)
+ 	test -d $(DESTDIR)$(MANDIR) || mkdir -p $(DESTDIR)$(MANDIR)
+ 	test -d $(DESTDIR)$(MANDIR)/man1 || mkdir -p $(DESTDIR)$(MANDIR)/man1
+-	rm -f $(DESTDIR)$(MANDIR)/man1/ex.1 $(DESTDIR)$(MANDIR)/man1/edit.1 \
+-		$(DESTDIR)$(MANDIR)/man1/vedit.1 \
+-		$(DESTDIR)$(MANDIR)/man1/vi.1 \
+-		$(DESTDIR)$(MANDIR)/man1/view.1
+-	$(INSTALL) -c -m 644 ex.1 $(DESTDIR)$(MANDIR)/man1/ex.1
+-	$(INSTALL) -c -m 644 vi.1 $(DESTDIR)$(MANDIR)/man1/vi.1
+-	ln -s ex.1 $(DESTDIR)$(MANDIR)/man1/edit.1
+-	ln -s vi.1 $(DESTDIR)$(MANDIR)/man1/vedit.1
+-	ln -s vi.1 $(DESTDIR)$(MANDIR)/man1/view.1
++	rm -f $(DESTDIR)$(MANDIR)/man1/ex.traditional.1 $(DESTDIR)$(MANDIR)/man1/edit.traditional.1 \
++		$(DESTDIR)$(MANDIR)/man1/vedit.traditional.1 \
++		$(DESTDIR)$(MANDIR)/man1/vi.traditional.1 \
++		$(DESTDIR)$(MANDIR)/man1/view.traditional.1
++	$(INSTALL) -c -m 644 ex.1 $(DESTDIR)$(MANDIR)/man1/ex.traditional.1
++	$(INSTALL) -c -m 644 vi.1 $(DESTDIR)$(MANDIR)/man1/vi.traditional.1
++	ln -s ex.traditional.1 $(DESTDIR)$(MANDIR)/man1/edit.traditional.1
++	ln -s vi.traditional.1 $(DESTDIR)$(MANDIR)/man1/vedit.traditional.1
++	ln -s vi.traditional.1 $(DESTDIR)$(MANDIR)/man1/view.traditional.1
+ 
+ install: all install-man
+-	rm -f $(DESTDIR)$(BINDIR)/ex $(DESTDIR)$(BINDIR)/edit \
+-		$(DESTDIR)$(BINDIR)/vedit $(DESTDIR)$(BINDIR)/vi \
+-		$(DESTDIR)$(BINDIR)/view
++	rm -f $(DESTDIR)$(BINDIR)/ex.traditional $(DESTDIR)$(BINDIR)/edit.traditional \
++		$(DESTDIR)$(BINDIR)/vedit.traditional $(DESTDIR)$(BINDIR)/vi.traditional \
++		$(DESTDIR)$(BINDIR)/view.traditional
+ 	test -d $(DESTDIR)$(BINDIR) || mkdir -p $(DESTDIR)$(BINDIR)
+ # special provisions for sticky install
+-	if test -f $(DESTDIR)$(BINDIR)/ex; \
+-	then	test -f $(DESTDIR)$(BINDIR)/ex.old.$$$$ && exit 1; \
+-		chmod 755 $(DESTDIR)$(BINDIR)/ex; \
+-		echo q | $(DESTDIR)$(BINDIR)/ex; \
+-		mv $(DESTDIR)$(BINDIR)/ex $(DESTDIR)$(BINDIR)/ex.old.$$$$; \
+-		rm -f $(DESTDIR)$(BINDIR)/ex.old.$$$$; \
++	if test -f $(DESTDIR)$(BINDIR)/ex.traditional; \
++	then	test -f $(DESTDIR)$(BINDIR)/ex.traditional.old.$$$$ && exit 1; \
++		chmod 755 $(DESTDIR)$(BINDIR)/ex.traditional; \
++		echo q | $(DESTDIR)$(BINDIR)/ex.traditional; \
++		mv $(DESTDIR)$(BINDIR)/ex.traditional $(DESTDIR)$(BINDIR)/ex.traditional.old.$$$$; \
++		rm -f $(DESTDIR)$(BINDIR)/ex.traditional.old.$$$$; \
+ 	fi
+-	$(INSTALL) -c $(STRIP) -m 1755 ex $(DESTDIR)$(BINDIR)/ex
++	$(INSTALL) -c $(STRIP) -m 1755 ex $(DESTDIR)$(BINDIR)/ex.traditional
+ 	test -d $(DESTDIR)$(LIBEXECDIR) || mkdir -p $(DESTDIR)$(LIBEXECDIR)
+ 	$(INSTALL) -c $(STRIP) exrecover $(DESTDIR)$(LIBEXECDIR)/exrecover
+ 	$(INSTALL) -c $(STRIP) expreserve $(DESTDIR)$(LIBEXECDIR)/expreserve
+-	ln -s ex $(DESTDIR)$(BINDIR)/edit
+-	ln -s ex $(DESTDIR)$(BINDIR)/vedit
+-	ln -s ex $(DESTDIR)$(BINDIR)/vi
+-	ln -s ex $(DESTDIR)$(BINDIR)/view
++	ln -s ex.traditional $(DESTDIR)$(BINDIR)/edit.traditional
++	ln -s ex.traditional $(DESTDIR)$(BINDIR)/vedit.traditional
++	ln -s ex.traditional $(DESTDIR)$(BINDIR)/vi.traditional
++	ln -s ex.traditional $(DESTDIR)$(BINDIR)/view.traditional
+ 	test -d $(DESTDIR)$(PRESERVEDIR) || mkdir -p $(DESTDIR)$(PRESERVEDIR)
+ 	chmod 1777 $(DESTDIR)$(PRESERVEDIR)
+ 

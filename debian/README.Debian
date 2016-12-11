@@ -1,0 +1,10 @@
+vi for Debian
+-------------
+
+This is the traditional UNIX Vi tool, released under 4 clause BSD.
+
+To prevent confusion, tools are added with the suffix ".traditional".
+You will need to call "ex.traditional" or "vi.traditional".
+Another method would be selecting them explicitly via update-alternatives.
+
+ -- Boyuan Yang <073plan@gmail.com>  Sun, 11 Dec 2016 23:54:30 +0800
