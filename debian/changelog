@@ -1,3 +1,9 @@
+vi (070224-2~bpo9+1) stretch-backports; urgency=medium
+
+  * Rebuild for stretch-backports.
+
+ -- Boyuan Yang <073plan@gmail.com>  Wed, 27 Jun 2018 23:31:49 +0800
+
 vi (070224-2) unstable; urgency=medium
 
   * No-change rebuild for Debian Unstable.

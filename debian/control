@@ -3,7 +3,7 @@ Section: editors
 Priority: optional
 Maintainer: Boyuan Yang <073plan@gmail.com>
 Build-Depends:
- debhelper (>= 11~),
+ debhelper (>= 10~),
  libncurses5-dev,
 Standards-Version: 4.1.4
 Homepage: http://ex-vi.sourceforge.net
