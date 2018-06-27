@@ -1,3 +1,11 @@
+vi (070224-2) unstable; urgency=medium
+
+  * No-change rebuild for Debian Unstable.
+  * Apply "wrap-and-sort -abst".
+  * d/rules: Use "dh_missing --fail-missing".
+
+ -- Boyuan Yang <073plan@gmail.com>  Wed, 27 Jun 2018 23:18:03 +0800
+
 vi (070224-1) unstable; urgency=medium
 
   * Initial release.

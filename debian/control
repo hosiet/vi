@@ -3,18 +3,18 @@ Section: editors
 Priority: optional
 Maintainer: Boyuan Yang <073plan@gmail.com>
 Build-Depends:
- debhelper (>= 10),
+ debhelper (>= 11~),
  libncurses5-dev,
-Standards-Version: 3.9.8
+Standards-Version: 4.1.4
 Homepage: http://ex-vi.sourceforge.net
-#Vcs-Git: https://anonscm.debian.org/collab-maint/vi.git
-#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/vi.git
+Vcs-Git: https://github.com/hosiet/vi.git
+Vcs-Browser: https://github.com/hosiet/vi
 
 Package: vi
 Architecture: any
 Depends:
- ${shlibs:Depends},
  ${misc:Depends},
+ ${shlibs:Depends},
 Description: Traditional Vi
  Vi is the original screen based text editor for Unix systems.
  It is considered the standard text editor, and is available on
