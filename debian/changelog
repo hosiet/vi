@@ -1,3 +1,10 @@
+vi (070224-3) unstable; urgency=medium
+
+  * Rebuild for Debian Buster. 
+  * debian/control: Use debhelper compat v12.
+
+ -- Boyuan Yang <byang@debian.org>  Thu, 14 Feb 2019 19:20:31 -0500
+
 vi (070224-2) unstable; urgency=medium
 
   * No-change rebuild for Debian Unstable.

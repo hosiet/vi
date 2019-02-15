@@ -1,11 +1,12 @@
 Source: vi
 Section: editors
 Priority: optional
-Maintainer: Boyuan Yang <073plan@gmail.com>
+Maintainer: Boyuan Yang <byang@debian.org>
 Build-Depends:
- debhelper (>= 11~),
+ debhelper-compat (= 12),
  libncurses5-dev,
-Standards-Version: 4.1.4
+Rules-Requires-Root: no
+Standards-Version: 4.3.0
 Homepage: http://ex-vi.sourceforge.net
 Vcs-Git: https://github.com/hosiet/vi.git
 Vcs-Browser: https://github.com/hosiet/vi
